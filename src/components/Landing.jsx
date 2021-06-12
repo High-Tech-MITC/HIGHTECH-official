@@ -1,15 +1,16 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
     <div>
-      <div class="bg-indigo-900 md:overflow-hidden">
+      <div class="h-screen md:h-auto bg-indigo-900 md:overflow-hidden">
         <div class="px-4 py-20 md:py-4">
           <div class="md:max-w-6xl md:mx-auto">
             <div class="md:flex md:flex-wrap">
               <div class="md:w-1/2 text-center md:text-left md:pt-16">
                 <h1 class="font-bold text-white text-2xl md:text-5xl leading-tight mb-4">
-                  Welcome to the kingdom of hightech.
+                  Welcome to the kingdom of{" "}
+                  <span className="bg-white text-indigo-900">HIGHTECH</span>.
                 </h1>
 
                 <p class="text-indigo-200 md:text-xl md:pr-48">
@@ -18,12 +19,12 @@ const Landing = () => {
                   enim.
                 </p>
 
-                <a
-                  href="/"
-                  class="mt-6 mb-12 md:mb-0 md:mt-10 inline-block py-3 px-8 text-white bg-red-500 hover:bg-red-600 rounded-lg shadow"
+                <Link
+                  to="/services"
+                  class="font-black mt-6 mb-12 md:mb-0 md:mt-10 inline-block py-3 px-8 text-indigo-900 bg-white hover:bg-green-300 over:text-green-500 rounded-lg shadow"
                 >
-                  Get Started
-                </a>
+                  Our Services
+                </Link>
               </div>
 
               {/* replacing the below div with svg in the future */}
@@ -58,8 +59,8 @@ const Landing = () => {
                     </div>
 
                     <div class="text-gray-800 text-center">
-                      Online <br />
-                      Services
+                      Software <br />
+                      Development
                     </div>
                   </div>
 
@@ -85,7 +86,7 @@ const Landing = () => {
                     </div>
 
                     <div class="text-gray-800 text-center">
-                      Banking Services
+                      Penetration Testing
                     </div>
                   </div>
 
@@ -112,8 +113,8 @@ const Landing = () => {
                     </div>
 
                     <div class="text-gray-800 text-center">
-                      Payment for <br />
-                      Internet
+                      Graphic <br />
+                      Design
                     </div>
                   </div>
 
@@ -131,7 +132,7 @@ const Landing = () => {
                     ></div>
                     <div class="flex-1 p-6">
                       <h2 class="text-lg text-gray-700 font-bold mb-3">
-                        Popular Payments
+                        Popular Projects
                       </h2>
                       <div class="flex mb-5">
                         <div class="w-16 rounded-full bg-gray-100 py-2 px-4 mr-2">
@@ -173,7 +174,7 @@ const Landing = () => {
                       </div>
 
                       <h2 class="text-lg text-gray-700 font-bold mb-3">
-                        Popular Payments
+                        Ongoing Projects
                       </h2>
 
                       <div class="w-full flex flex-wrap justify-between items-center border-b-2 border-gray-100 py-3">

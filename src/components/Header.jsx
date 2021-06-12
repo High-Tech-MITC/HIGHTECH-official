@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles/Header.css";
 
 const Header = () => {
@@ -6,9 +7,9 @@ const Header = () => {
       <div class="bg-indigo-900 px-4 py-4">
         <div class="md:max-w-6xl md:mx-auto md:flex md:items-center md:justify-between">
           <div class="flex justify-between items-center">
-            <a href="/" class="inline-block py-2 text-white text-xl font-bold">
+            <Link to="/" class="inline-block py-2 text-white text-xl font-bold">
               HIGHTECH
-            </a>
+            </Link>
             <div class="inline-block cursor-pointer md:hidden">
               <div class="bg-gray-400 w-8 mb-2" style={{ height: "2px" }}></div>
               <div class="bg-gray-400 w-8 mb-2" style={{ height: "2px" }}></div>
@@ -18,39 +19,39 @@ const Header = () => {
 
           <div>
             <div class="hidden md:block">
-              <a
-                href="/"
+              <Link
+                to="/services"
                 class="inline-block py-1 md:py-4 text-gray-100 mr-6 font-bold"
               >
                 Services
-              </a>
-              <a
-                href="/"
+              </Link>
+              <Link
+                to="/about"
                 class="inline-block py-1 md:py-4 text-gray-500 hover:text-gray-100 mr-6"
               >
                 About
-              </a>
-              <a
-                href="/"
+              </Link>
+              <Link
+                to="/members"
                 class="inline-block py-1 md:py-4 text-gray-500 hover:text-gray-100"
               >
-                Teams
-              </a>
+                Members
+              </Link>
             </div>
           </div>
           <div class="hidden md:block">
-            <a
-              href="/"
+            <Link
+              to="/"
               class="inline-block py-1 md:py-4 text-gray-500 hover:text-gray-100 mr-6"
             >
               Blog
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              to="/"
               class="inline-block py-2 px-4 text-gray-700 bg-white hover:bg-gray-100 rounded-lg"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

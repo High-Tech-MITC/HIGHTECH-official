@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Footer>
+    <footer>
       <div class="table w-full">
         <div class="block sm:table-cell">
           <p class="uppercase text-grey text-sm sm:mb-6">Links</p>
@@ -80,7 +80,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-    </Footer>
+    </footer>
   );
 };
 

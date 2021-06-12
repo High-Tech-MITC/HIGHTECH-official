@@ -1,8 +1,8 @@
-import React from "react";
+import img from "./img.jpg";
 
 const Services = () => {
   return (
-    <div className="relative py-24">
+    <div className="relative py-24 bg-gray-300">
       <h2 className="text-center text-3xl font-bold">Our Services</h2>
       <div
         // style={{ height: "70vh" }}
@@ -107,11 +107,7 @@ const Services = () => {
                       src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Woman_7.jpg"
                       className="w-6 h-6 rounded-full"
                     />
-                    <img
-                      alt="im"
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxSqK0tVELGWDYAiUY1oRrfnGJCKSKv95OGUtm9eKG9HQLn769YDujQi1QFat32xl-BiY&usqp=CAU"
-                      className="w-6 h-6 rounded-full"
-                    />
+                    <img alt="im" src={img} className="w-6 h-6 rounded-full" />
                   </div>
                 </div>
                 <div className="my-2">
