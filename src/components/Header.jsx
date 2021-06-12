@@ -21,19 +21,19 @@ const Header = () => {
             <div class="hidden md:block">
               <Link
                 to="/services"
-                class="inline-block py-1 md:py-4 text-gray-100 mr-6 font-bold"
+                class="inline-block py-1 md:py-4 mr-6   hover:text-green-300 text-gray-100"
               >
                 Services
               </Link>
               <Link
-                to="/about"
-                class="inline-block py-1 md:py-4 text-gray-500 hover:text-gray-100 mr-6"
+                to="/projects"
+                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6"
               >
-                About
+                Our Works
               </Link>
               <Link
                 to="/members"
-                class="inline-block py-1 md:py-4 text-gray-500 hover:text-gray-100"
+                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300"
               >
                 Members
               </Link>
@@ -41,10 +41,10 @@ const Header = () => {
           </div>
           <div class="hidden md:block">
             <Link
-              to="/"
-              class="inline-block py-1 md:py-4 text-gray-500 hover:text-gray-100 mr-6"
+              to="/about"
+              class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6"
             >
-              Blog
+              About
             </Link>
             <Link
               to="/"
