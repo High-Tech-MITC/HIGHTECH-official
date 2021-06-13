@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Landing = () => {
   return (
     <div>
-      <div class="h-screen md:h-auto bg-indigo-900 md:overflow-hidden">
+      <div class=" md:h-auto bg-indigo-900 md:overflow-hidden">
         <div class="px-4 py-20 md:py-4">
           <div class="md:max-w-6xl md:mx-auto">
             <div class="md:flex md:flex-wrap">
@@ -387,7 +387,7 @@ const Landing = () => {
           </div>
         </div>
         <svg
-          class="fill-current text-white hidden md:block"
+          class=" fill-current text-white  md:block"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import img from "./img.jpg";
 
 const Services = () => {
@@ -95,7 +96,9 @@ const Services = () => {
 
               <div className="flex justify-between">
                 <div className="my-2">
-                  <p className="font-semibold text-base mb-2">Team Member</p>
+                  <Link to="/members" className="font-semibold text-base mb-2">
+                    Team Member
+                  </Link>
                   <div className="flex space-x-2">
                     <img
                       alt="im"

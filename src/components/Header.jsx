@@ -47,7 +47,7 @@ const Header = () => {
               About
             </Link>
             <Link
-              to="/"
+              to="/contact"
               class="inline-block py-2 px-4 text-gray-700 bg-white hover:bg-gray-100 rounded-lg"
             >
               Contact Us

@@ -4,7 +4,7 @@ import img from "./img.jpg";
 const Members = () => {
   let arr = [2, 3, 3, 4, 1, 2, 3, 4, 3];
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 text-center">
       <h1 className="text-white text-2xl text-center text-bold py-8">
         MEMBERS
       </h1>
@@ -12,7 +12,8 @@ const Members = () => {
         className="
       grid grid-cols-1
       gap-6
-      p-16
+      p-8
+      md:p-16
       sm:grid-cols-2
       md:grid-cols-3
       lg:grid-cols-4
