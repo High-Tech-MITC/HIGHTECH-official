@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import About from "./sub/About";
+import Provides from "./sub/Provides";
+import Info from "./sub/Info";
+import Subscribe from "./sub/Subscribe";
 
 const Landing = () => {
   return (
@@ -10,7 +14,7 @@ const Landing = () => {
               <div class="md:w-1/2 text-center md:text-left md:pt-16">
                 <h1 class="font-bold text-white text-2xl md:text-5xl leading-tight mb-4">
                   Welcome to the kingdom of{" "}
-                  <span className="bg-white text-indigo-900">HIGHTECH</span>.
+                  <span className="bg-white text-indigo-900">HIGHTECH</span>
                 </h1>
 
                 <p class="text-indigo-200 md:text-xl md:pr-48">
@@ -394,6 +398,11 @@ const Landing = () => {
           <path fill-opacity="1" d="M0,224L1440,32L1440,320L0,320Z"></path>
         </svg>
       </div>
+      <About />
+
+      <Info />
+      <Provides />
+      <Subscribe />
     </div>
   );
 };

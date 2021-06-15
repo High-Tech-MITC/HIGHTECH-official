@@ -51,7 +51,7 @@ const Members = () => {
               />
 
               <div className="mt-20">
-                <p className="text-xl font-semibold my-2">Faruq Ismael</p>
+                <p className="text-xl font-semibold my-2">John Doe</p>
                 <div className="flex space-x-2 text-gray-400 text-sm">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
