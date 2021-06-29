@@ -399,7 +399,6 @@ const Landing = () => {
         </svg>
       </div>
       <About />
-
       <Info />
       <Provides />
       <Subscribe />

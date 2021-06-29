@@ -25,11 +25,11 @@ const provides = () => {
     },
   ];
   return (
-    <div>
+    <div className="sub__provides">
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <h2 classNameName="text-indigo-900 text-3xl pb-6 lg:uppercase">
-            Collaborating with Us{" "}
+          <h2 className="text-indigo-900 text-2xl pb-6 lg:uppercase">
+            Collaborating with Us
           </h2>
           <div className="flex flex-wrap w-full">
             <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
@@ -85,7 +85,7 @@ const provides = () => {
               ))}
             </div>
             <img
-              className="lg:w-3/5 md:w-1/2 object-center md:mt-0 mt-12"
+              className="invisible md:visible lg:w-3/5 md:w-1/2 object-center md:mt-0 mt-12"
               width="100"
               src={idea}
               alt="step"

@@ -13,7 +13,7 @@ const Info = () => {
     { name: "Teams", icon: FaCode, counter: 5 },
   ];
   return (
-    <div>
+    <div className="sub__info">
       <section class="text-gray-600 bg-indigo-900 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4 text-center">

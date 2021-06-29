@@ -2,10 +2,10 @@ import { FaPhone, FaMapMarked, FaMailBulk } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="contact px-20">
+    <div className=" contact px-20">
       <div class="bg-white mx-auto sm:px-6 lg:px-8">
         <div class="mt-8 overflow-hidden">
-          <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class=" grid grid-cols-1 md:grid-cols-2">
             <div class="p-6 mr-2  sm:rounded-lg">
               <h1 class="text-4xl sm:text-5xl text-indigo-900 dark:text-white font-extrabold tracking-tight">
                 Contact Us
