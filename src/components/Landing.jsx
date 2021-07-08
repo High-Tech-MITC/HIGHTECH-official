@@ -13,8 +13,11 @@ const Landing = () => {
             <div class="md:flex md:flex-wrap">
               <div class="md:w-1/2 text-center md:text-left md:pt-16">
                 <h1 class="font-bold text-white text-2xl md:text-5xl leading-tight mb-4">
-                  Welcome to the kingdom of{" "}
-                  <span className="bg-white text-indigo-900">HIGHTECH</span>
+                  Welcome to the kingdom{" "}
+                  <div className="mt-3">
+                    of
+                    <span className="bg-white text-indigo-900 ">HIGHTECH</span>
+                  </div>
                 </h1>
 
                 <p class="text-indigo-200 md:text-xl md:pr-48">
@@ -35,7 +38,7 @@ const Landing = () => {
               <div class="md:w-1/2 invisible md:visible lg:visible relative">
                 <div class="hidden md:block">
                   <div
-                    class="-ml-24 -mb-40 absolute left-0 bottom-0 w-40 bg-white rounded-lg shadow-lg px-6 py-8"
+                    class="-ml-24 -mb-40 absolute left-0 bottom-0 w-40 bg-white rounded-lg shadow-lg px-6 py-8 mt-40"
                     style={{ transform: "rotate(-8deg)" }}
                   >
                     <div class="bg-indigo-800 mx-auto rounded-lg px-2 pb-2 relative mb-8">
