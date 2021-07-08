@@ -13,14 +13,14 @@ const Landing = () => {
             <div class="md:flex md:flex-wrap">
               <div class="md:w-1/2 text-center md:text-left md:pt-16">
                 <h1 class="font-bold text-white text-2xl md:text-5xl leading-tight mb-4">
-                  Welcome to the kingdom{" "}
-                  <div className="mt-3">
-                    of
-                    <span className="bg-white text-indigo-900 ">HIGHTECH</span>
-                  </div>
+                  Welcome To The Kingdom of
                 </h1>
 
-                <p class="text-indigo-200 md:text-xl md:pr-48">
+                <span className="font-bold text-4xl bg-white text-indigo-900 mb-4 px-1">
+                  HIGHTECH
+                </span>
+
+                <p class="text-indigo-200 md:text-xl md:pr-48 mt-3">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
                   vitae corrupti asperiores veritatis dolorum, commodi aperiam
                   enim.
