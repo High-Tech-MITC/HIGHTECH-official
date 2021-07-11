@@ -1,1 +1,5 @@
-## HIGHCV
+# HIGTECH
+
+### HIGTECH'S OFFICIAL WEBSITE 
+
+## ... SOON
