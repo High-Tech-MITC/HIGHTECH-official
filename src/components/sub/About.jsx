@@ -11,9 +11,9 @@ const About = () => {
   `;
 
   return (
-    <div className="sub__about">
+   <div className="sub__about font-mono">
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap">
+        <div className="container px-5 pb-24 mx-auto flex flex-wrap">
           <div className="flex flex-wrap w-full">
             <img
               className="invisible lg:visible lg:w-3/5 md:w-1/2 object-center md:mt-0 mt-12"
@@ -23,10 +23,8 @@ const About = () => {
             />
             <div className="text-center flex justify-center items-center lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
               <div>
-                <h1 className="text-3xl text-black underline font-bold">
-                  ABOUT US
-                </h1>
-                <p className="text-left text-xl text-black p-8">{about}</p>
+                <h1 className="text-3xl text-black font-bold">About us</h1>
+                <p className="text-left text-xl text-black p-8 ">{about}</p>
                 <Link
                   to="/about"
                   className="text-indigo-500 inline-flex items-center mt-4"
