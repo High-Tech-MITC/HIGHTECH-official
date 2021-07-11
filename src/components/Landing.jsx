@@ -1,32 +1,98 @@
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import About from "./sub/About";
 import Provides from "./sub/Provides";
 import Info from "./sub/Info";
 import Subscribe from "./sub/Subscribe";
+import { gsap, Power3 } from "gsap";
 
 const Landing = () => {
+  let welcomeText = useRef(null);
+  let hightTech = useRef(null);
+  let description = useRef(null);
+  let ourservice = useRef(null);
+  let terminal = useRef(null);
+  let terminalCursor = useRef(null);
+
+  let textTl = gsap.timeline();
+
+  let terminalTl = gsap.timeline();
+
+  useEffect(() => {
+    textTl
+      .from(welcomeText, {
+        y: -90,
+        stagger: 0.6,
+        opacity: 0,
+      })
+      .from(hightTech, {
+        y: -50,
+        opacity: 0,
+      })
+      .from(description, {
+        y: -10,
+        stagger: 0.6,
+        opacity: 0,
+      })
+      .from(ourservice, {
+        y: -20,
+        stagger: 0.6,
+        opacity: 0,
+      });
+
+    terminalTl
+      .from(terminal, {
+        x: 90,
+        opacity: 0,
+      })
+      .to(terminalCursor, {
+        opacity: 0,
+        ease: Power3.inOut,
+        duration: 0.6,
+        repeat: -1,
+      });
+  }, []);
+
   return (
     <div>
-      <div class=" md:h-auto bg-indigo-900 md:overflow-hidden">
+      <div class=" md:h-auto bg-indigo-900 md:overflow-hidden font-mono">
         <div class="px-4 py-20 md:py-4">
           <div class="md:max-w-6xl md:mx-auto">
             <div class="md:flex md:flex-wrap">
               <div class="md:w-1/2 text-center md:text-left md:pt-16">
-                <h1 class="font-bold text-white text-2xl md:text-5xl leading-tight mb-4">
+                <h1
+                  ref={(el) => {
+                    welcomeText = el;
+                  }}
+                  class="font-bold   text-white text-2xl md:text-5xl leading-tight mb-4"
+                >
                   Welcome To The Kingdom of
                 </h1>
 
-                <span className="font-bold text-4xl bg-white text-indigo-900 mb-4 px-1">
+                <span
+                  ref={(el) => {
+                    hightTech = el;
+                  }}
+                  className="font-bold text-4xl bg-white text-indigo-900 mb-4 px-1"
+                >
                   HIGHTECH
                 </span>
 
-                <p class="text-indigo-200 md:text-xl md:pr-48 mt-3">
+                <p
+                  ref={(el) => {
+                    description = el;
+                  }}
+                  class="text-indigo-200 md:text-xl md:pr-48 mt-3"
+                >
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
                   vitae corrupti asperiores veritatis dolorum, commodi aperiam
                   enim.
                 </p>
 
                 <Link
+                  ref={(el) => {
+                    ourservice = el;
+                  }}
                   to="/services"
                   class="font-black mt-6 mb-12 md:mb-0 md:mt-10 inline-block py-3 px-8 text-indigo-900 bg-white hover:bg-green-300 over:text-green-500 rounded-lg shadow"
                 >
@@ -34,359 +100,51 @@ const Landing = () => {
                 </Link>
               </div>
 
-              {/* replacing the below div with svg in the future */}
-              <div class="md:w-1/2 invisible md:visible lg:visible relative">
+              {/* TODO: make the terminal interactive. it would be a cool feature if users can run commands that gives details about high tech */}
+              <div
+                ref={(el) => {
+                  terminal = el;
+                }}
+                class="md:w-1/2 mx-auto text-center md:text-left md:pt-16"
+              >
                 <div class="hidden md:block">
-                  <div
-                    class="-ml-24 -mb-40 absolute left-0 bottom-0 w-40 bg-white rounded-lg shadow-lg px-6 py-8 mt-40"
-                    style={{ transform: "rotate(-8deg)" }}
-                  >
-                    <div class="bg-indigo-800 mx-auto rounded-lg px-2 pb-2 relative mb-8">
-                      <div class="mb-1">
-                        <span
-                          class="w-1 h-1 bg-indigo-100 rounded-full inline-block"
-                          style={{ marginRight: "1px" }}
-                        ></span>
-                        <span
-                          class="w-1 h-1 bg-indigo-100 rounded-full inline-block"
-                          style={{ marginRight: "1px" }}
-                        ></span>
-                        <span class="w-1 h-1 bg-indigo-100 rounded-full inline-block"></span>
-                      </div>
-                      <div class="h-1 w-12 bg-indigo-100 rounded mb-1"></div>
-                      <div class="h-1 w-10 bg-indigo-100 rounded mb-2"></div>
-
-                      <div class="flex">
-                        <div class="w-6 h-3 rounded bg-indigo-100 mr-1"></div>
-                        <div class="w-6 h-3 rounded bg-indigo-100"></div>
-                      </div>
-
-                      <div class="-mr-2 -mb-4 absolute bottom-0 right-0 h-16 w-10 rounded-lg bg-green-700 border-2 border-white"></div>
-                      <div class="w-2 h-2 rounded-full bg-green-800 mx-auto absolute bottom-0 right-0 mr-2 -mb-2 z-10 border-2 border-white"></div>
-                    </div>
-
-                    <div class="text-gray-800 text-center">
-                      Software <br />
-                      Development
-                    </div>
-                  </div>
-
-                  <div
-                    class="ml-24 mb-16 absolute left-0 bottom-0 w-40 bg-white rounded-lg shadow-lg px-6 py-8"
-                    style={{ transform: "rotate(-8deg)", zIndex: 2 }}
-                  >
-                    <div class="bg-indigo-800 mx-auto rounded-lg relative mb-8 py-2 w-20 border-2 border-white">
-                      <div
-                        class="h-8 bg-green-700 w-8 rounded absolute left-0 top-0 -mt-3 ml-4"
-                        style={{ transform: "rotate(-45deg)", zIndex: -1 }}
-                      ></div>
-                      <div
-                        class="h-8 bg-green-800 w-8 rounded absolute left-0 top-0 -mt-3 ml-8"
-                        style={{ transform: "rotate(-12deg)", zIndex: -2 }}
-                      ></div>
-
-                      <div class="flex items-center justify-center h-6 bg-indigo-800 w-6 rounded-l-lg ml-auto border-4 border-white -mr-1">
-                        <div class="h-2 w-2 rounded-full bg-indigo-800 border-2 border-white"></div>
-                      </div>
-
-                      <div class="w-8 h-8 bg-green-700 border-4 border-white rounded-full -ml-3 -mb-5"></div>
-                    </div>
-
-                    <div class="text-gray-800 text-center">
-                      Penetration Testing
-                    </div>
-                  </div>
-
-                  <div
-                    class="ml-32 absolute left-0 bottom-0 w-48 bg-white rounded-lg shadow-lg px-10 py-8"
-                    style={{
-                      transform: "rotate(-8deg)",
-                      zIndex: 2,
-                      marginBottom: "-220px",
-                    }}
-                  >
-                    <div class="bg-indigo-800 mx-auto rounded-lg pt-4 mb-16 relative">
-                      <div class="h-4 bg-white"></div>
-
-                      <div class="text-right my-2 pb-1">
-                        <div class="inline-flex w-3 h-3 rounded-full bg-white -mr-2"></div>
-                        <div class="inline-flex w-3 h-3 rounded-full bg-indigo-800 border-2 border-white mr-2"></div>
-                      </div>
-
-                      <div class="-ml-4 -mb-6 absolute left-0 bottom-0 w-16 bg-green-700 mx-auto rounded-lg pb-2 pt-3">
-                        <div class="h-2 bg-white mb-2"></div>
-                        <div class="h-2 bg-white w-6 ml-auto rounded mr-2"></div>
-                      </div>
-                    </div>
-
-                    <div class="text-gray-800 text-center">
-                      Graphic <br />
-                      Design
-                    </div>
-                  </div>
-
-                  <div
-                    class="mt-10 w-full absolute right-0 top-0 flex rounded-lg bg-white overflow-hidden shadow-lg"
-                    style={{
-                      transform: "rotate(-8deg)",
-                      marginRight: "-250px",
-                      zIndex: 1,
-                    }}
-                  >
+                  <div class="w-full shadow-2xl subpixel-antialiased rounded h-64 bg-black border-black mx-auto">
                     <div
-                      class="w-32 bg-gray-200"
-                      style={{ height: "560px" }}
-                    ></div>
-                    <div class="flex-1 p-6">
-                      <h2 class="text-lg text-gray-700 font-bold mb-3">
-                        Popular Projects
-                      </h2>
-                      <div class="flex mb-5">
-                        <div class="w-16 rounded-full bg-gray-100 py-2 px-4 mr-2">
-                          <div class="p-1 rounded-full bg-gray-300"></div>
-                        </div>
-                        <div class="w-16 rounded-full bg-gray-100 py-2 px-4 mr-2">
-                          <div class="p-1 rounded-full bg-gray-300"></div>
-                        </div>
-                        <div class="w-16 rounded-full bg-gray-100 py-2 px-4 mr-2">
-                          <div class="p-1 rounded-full bg-gray-300"></div>
-                        </div>
-                        <div class="w-16 rounded-full bg-gray-100 py-2 px-4">
-                          <div class="p-1 rounded-full bg-gray-300"></div>
-                        </div>
-                      </div>
-
-                      <div class="flex flex-wrap -mx-4 mb-5">
-                        <div class="w-1/3 px-4">
-                          <div class="h-40 rounded-lg bg-white shadow-lg p-6">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 mb-6"></div>
-                            <div class="h-2 w-16 bg-gray-200 mb-2 rounded-full"></div>
-                            <div class="h-2 w-10 bg-gray-200 rounded-full"></div>
-                          </div>
-                        </div>
-                        <div class="w-1/3 px-4">
-                          <div class="h-40 rounded-lg bg-white shadow-lg p-6">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 mb-6"></div>
-                            <div class="h-2 w-16 bg-gray-200 mb-2 rounded-full"></div>
-                            <div class="h-2 w-10 bg-gray-200 rounded-full"></div>
-                          </div>
-                        </div>
-                        <div class="w-1/3 px-4">
-                          <div class="h-40 rounded-lg bg-white shadow-lg p-6">
-                            <div class="w-16 h-16 rounded-full bg-gray-200 mb-6"></div>
-                            <div class="h-2 w-16 bg-gray-200 mb-2 rounded-full"></div>
-                            <div class="h-2 w-10 bg-gray-200 rounded-full"></div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <h2 class="text-lg text-gray-700 font-bold mb-3">
-                        Ongoing Projects
-                      </h2>
-
-                      <div class="w-full flex flex-wrap justify-between items-center border-b-2 border-gray-100 py-3">
-                        <div class="w-1/3">
-                          <div class="flex">
-                            <div class="h-8 w-8 rounded bg-gray-200 mr-4"></div>
-                            <div>
-                              <div class="h-2 w-16 bg-gray-200 mb-1 rounded-full"></div>
-                              <div class="h-2 w-10 bg-gray-100 rounded-full"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="w-1/3">
-                          <div class="w-16 rounded-full bg-green-100 py-2 px-4 mx-auto">
-                            <div class="p-1 rounded-full bg-green-200"></div>
-                          </div>
-                        </div>
-                        <div class="w-1/3">
-                          <div class="h-2 w-10 bg-gray-100 rounded-full mx-auto"></div>
-                        </div>
-                      </div>
-
-                      <div class="flex flex-wrap justify-between items-center border-b-2 border-gray-100 py-3">
-                        <div class="w-1/3">
-                          <div class="flex">
-                            <div class="h-8 w-8 rounded bg-gray-200 mr-4"></div>
-                            <div>
-                              <div class="h-2 w-16 bg-gray-200 mb-1 rounded-full"></div>
-                              <div class="h-2 w-10 bg-gray-100 rounded-full"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="w-1/3">
-                          <div class="w-16 rounded-full bg-orange-100 py-2 px-4 mx-auto">
-                            <div class="p-1 rounded-full bg-orange-200"></div>
-                          </div>
-                        </div>
-                        <div class="w-1/3">
-                          <div class="h-2 w-16 bg-gray-100 rounded-full mx-auto"></div>
-                        </div>
-                      </div>
-
-                      <div class="flex flex-wrap justify-between items-center border-b-2 border-gray-100 py-3">
-                        <div class="w-1/3">
-                          <div class="flex">
-                            <div class="h-8 w-8 rounded bg-gray-200 mr-4"></div>
-                            <div>
-                              <div class="h-2 w-16 bg-gray-200 mb-1 rounded-full"></div>
-                              <div class="h-2 w-10 bg-gray-100 rounded-full"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="w-1/3">
-                          <div class="w-16 rounded-full bg-blue-100 py-2 px-4 mx-auto">
-                            <div class="p-1 rounded-full bg-blue-200"></div>
-                          </div>
-                        </div>
-                        <div class="w-1/3">
-                          <div class="h-2 w-8 bg-gray-100 rounded-full mx-auto"></div>
-                        </div>
+                      class="flex items-center h-6 rounded-t bg-gray-100 border-b border-gray-500 text-center text-black"
+                      id="headerTerminal"
+                    >
+                      <div
+                        class="flex ml-2 items-center text-center border-red-900 bg-red-500 shadow-inner rounded-full w-3 h-3"
+                        id="closebtn"
+                      ></div>
+                      <div
+                        class="ml-2 border-yellow-900 bg-yellow-500 shadow-inner rounded-full w-3 h-3"
+                        id="minbtn"
+                      ></div>
+                      <div
+                        class="ml-2 border-green-900 bg-green-500 shadow-inner rounded-full w-3 h-3"
+                        id="maxbtn"
+                      ></div>
+                      <div class="mx-auto pr-16" id="terminaltitle">
+                        <p class="text-center text-sm">Terminal</p>
                       </div>
                     </div>
-                  </div>
-
-                  <div
-                    class="w-full absolute left-0 bottom-0 ml-1"
-                    style={{
-                      transform: "rotate(-8deg)",
-                      zIndex: 1,
-                      marginBottom: "-360px",
-                    }}
-                  >
-                    <div class="grid--gray h-48 w-48"></div>
-                  </div>
-                </div>
-
-                <div class="md:hidden w-full absolute right-0 top-0 flex rounded-lg bg-white overflow-hidden shadow">
-                  <div class="h-4 bg-gray-200 absolute top-0 left-0 right-0 rounded-t-lg flex items-center">
-                    <span class="h-2 w-2 rounded-full bg-red-500 inline-block mr-1 ml-2"></span>
-                    <span class="h-2 w-2 rounded-full bg-orange-400 inline-block mr-1"></span>
-                    <span class="h-2 w-2 rounded-full bg-green-500 inline-block mr-1"></span>
-                  </div>
-                  <div
-                    class="w-32 bg-gray-100 px-2 py-8"
-                    style={{ height: "340px" }}
-                  >
-                    <div class="h-2 w-16 bg-gray-300 rounded-full mb-4"></div>
-                    <div class="flex items-center mb-4">
-                      <div class="h-5 w-5 rounded-full bg-gray-300 mr-3 flex-shrink-0"></div>
-                      <div>
-                        <div class="h-2 w-10 bg-gray-300 rounded-full"></div>
-                      </div>
+                    <div
+                      class="pl-1 pt-1 h-auto  text-indigo-400 font-mono text-sm bg-black"
+                      id="console"
+                    >
+                      <p class="pb-1">
+                        guest@hightTech:~$
+                        <span
+                          ref={(el) => {
+                            terminalCursor = el;
+                          }}
+                          class="pl-3"
+                        >
+                          _
+                        </span>
+                      </p>
                     </div>
-
-                    <div class="h-2 w-16 bg-gray-200 rounded-full mb-2"></div>
-                    <div class="h-2 w-10 bg-gray-200 rounded-full mb-2"></div>
-                    <div class="h-2 w-20 bg-gray-200 rounded-full mb-2"></div>
-                    <div class="h-2 w-6 bg-gray-200 rounded-full mb-2"></div>
-                    <div class="h-2 w-16 bg-gray-200 rounded-full mb-2"></div>
-                    <div class="h-2 w-10 bg-gray-200 rounded-full mb-2"></div>
-                    <div class="h-2 w-20 bg-gray-200 rounded-full mb-2"></div>
-                    <div class="h-2 w-6 bg-gray-200 rounded-full mb-2"></div>
-                  </div>
-                  <div class="flex-1 px-4 py-8">
-                    <h2 class="text-xs text-gray-700 font-bold mb-1">
-                      Popular Payments
-                    </h2>
-                    <div class="flex mb-5">
-                      <div class="p-2 w-12 rounded-full bg-gray-100 mr-2"></div>
-                      <div class="p-2 w-12 rounded-full bg-gray-100 mr-2"></div>
-                      <div class="p-2 w-12 rounded-full bg-gray-100 mr-2"></div>
-                      <div class="p-2 w-12 rounded-full bg-gray-100 mr-2"></div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-2 mb-5">
-                      <div class="w-1/3 px-2">
-                        <div class="p-3 rounded-lg bg-white shadow">
-                          <div class="w-6 h-6 rounded-full bg-gray-200 mb-2"></div>
-                          <div class="h-2 w-10 bg-gray-200 mb-1 rounded-full"></div>
-                          <div class="h-2 w-6 bg-gray-200 rounded-full"></div>
-                        </div>
-                      </div>
-                      <div class="w-1/3 px-2">
-                        <div class="p-3 rounded-lg bg-white shadow">
-                          <div class="w-6 h-6 rounded-full bg-gray-200 mb-2"></div>
-                          <div class="h-2 w-10 bg-gray-200 mb-1 rounded-full"></div>
-                          <div class="h-2 w-6 bg-gray-200 rounded-full"></div>
-                        </div>
-                      </div>
-                      <div class="w-1/3 px-2">
-                        <div class="p-3 rounded-lg bg-white shadow">
-                          <div class="w-6 h-6 rounded-full bg-gray-200 mb-2"></div>
-                          <div class="h-2 w-10 bg-gray-200 mb-1 rounded-full"></div>
-                          <div class="h-2 w-6 bg-gray-200 rounded-full"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <h2 class="text-xs text-gray-700 font-bold mb-1">
-                      Popular Payments
-                    </h2>
-
-                    <div class="w-full flex flex-wrap justify-between items-center border-b-2 border-gray-100 py-3">
-                      <div class="w-1/3">
-                        <div class="flex">
-                          <div class="h-5 w-5 rounded-full bg-gray-200 mr-3 flex-shrink-0"></div>
-                          <div>
-                            <div class="h-2 w-16 bg-gray-200 mb-1 rounded-full"></div>
-                            <div class="h-2 w-10 bg-gray-100 rounded-full"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-1/3">
-                        <div class="w-16 rounded-full bg-green-100 py-2 px-4 mx-auto">
-                          <div class="p-1 rounded-full bg-green-200"></div>
-                        </div>
-                      </div>
-                      <div class="w-1/3">
-                        <div class="h-2 w-10 bg-gray-100 rounded-full mx-auto"></div>
-                      </div>
-                    </div>
-
-                    <div class="flex flex-wrap justify-between items-center py-3">
-                      <div class="w-1/3">
-                        <div class="flex">
-                          <div class="h-5 w-5 rounded-full bg-gray-200 mr-3 flex-shrink-0"></div>
-                          <div>
-                            <div class="h-2 w-16 bg-gray-200 mb-1 rounded-full"></div>
-                            <div class="h-2 w-10 bg-gray-100 rounded-full"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-1/3">
-                        <div class="w-16 rounded-full bg-orange-100 py-2 px-4 mx-auto">
-                          <div class="p-1 rounded-full bg-orange-200"></div>
-                        </div>
-                      </div>
-                      <div class="w-1/3">
-                        <div class="h-2 w-16 bg-gray-100 rounded-full mx-auto"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="mr-3 md:hidden absolute right-0 bottom-0 w-40 bg-white rounded-lg shadow-lg px-10 py-6"
-                  style={{ zIndex: 2, marginBottom: "-380px" }}
-                >
-                  <div class="bg-indigo-800 mx-auto rounded-lg w-20 pt-3 mb-12 relative">
-                    <div class="h-3 bg-white"></div>
-
-                    <div class="text-right my-2">
-                      <div class="inline-flex w-3 h-3 rounded-full bg-white -mr-2"></div>
-                      <div class="inline-flex w-3 h-3 rounded-full bg-indigo-800 border-2 border-white mr-2"></div>
-                    </div>
-
-                    <div class="-ml-4 -mb-6 absolute left-0 bottom-0 w-16 bg-green-700 mx-auto rounded-lg pb-2 pt-3">
-                      <div class="h-2 bg-white mb-2"></div>
-                      <div class="h-2 bg-white w-6 ml-auto rounded mr-2"></div>
-                    </div>
-                  </div>
-
-                  <div class="text-gray-800 text-center text-sm">
-                    Payment for <br />
-                    Internet
                   </div>
                 </div>
               </div>

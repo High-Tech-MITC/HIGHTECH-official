@@ -1,10 +1,29 @@
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { gsap, Power3 } from "gsap";
 
 const Header = () => {
+  let nav = useRef(null);
+
+  let navTl = gsap.timeline();
+
+  useEffect(() => {
+    navTl.from(nav, {
+      y: -90,
+      stagger: 0.6,
+      opacity: 1,
+    });
+  }, []);
+
   return (
     <nav>
-      <div class="bg-indigo-900 px-4 py-4">
-        <div class="md:max-w-6xl md:mx-auto md:flex md:items-center md:justify-between">
+      <div class="bg-indigo-900 px-4 py-4 font-mono">
+        <div
+          ref={(el) => {
+            nav = el;
+          }}
+          class="md:max-w-6xl md:mx-auto md:flex md:items-center md:justify-between"
+        >
           <div class="flex justify-between items-center">
             <Link to="/" class="inline-block py-2 text-white text-xl font-bold">
               HIGHTECH
