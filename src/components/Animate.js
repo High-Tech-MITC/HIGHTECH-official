@@ -59,3 +59,21 @@ export const welcomeHero = (
       repeat: -1,
     });
 };
+
+export const hoverTerminal = (e) => {
+  gsap.to(e.target, {
+    duration: 0.4,
+    x: 3,
+    scale: 1.1,
+    ease: "power2.inOut",
+  });
+};
+
+export const hoverTerminalExit = (e) => {
+  gsap.to(e.target, {
+    duration: 0.4,
+    y: -3,
+    scale: 1,
+    ease: "power2.inOut",
+  });
+};

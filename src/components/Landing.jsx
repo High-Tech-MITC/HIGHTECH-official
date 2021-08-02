@@ -4,7 +4,7 @@ import About from "./sub/About";
 import Provides from "./sub/Provides";
 import Info from "./sub/Info";
 import Subscribe from "./sub/Subscribe";
-import { welcomeHero } from "./Animate";
+import { welcomeHero, hoverTerminal, hoverTerminalExit } from "./Animate";
 
 const Landing = () => {
   let welcomeText = useRef(null);
@@ -79,7 +79,11 @@ const Landing = () => {
                 }}
                 class="md:w-1/2 mx-auto text-center md:text-left md:pt-16"
               >
-                <div class="hidden md:block">
+                <div
+                  onMouseEnter={(e) => hoverTerminal(e)}
+                  onMouseOut={(e) => hoverTerminalExit(e)}
+                  class="hidden md:block"
+                >
                   <div class="w-full shadow-2xl subpixel-antialiased rounded h-64 bg-black border-black mx-auto">
                     <div
                       class="flex items-center h-6 rounded-t bg-gray-100 border-b border-gray-500 text-center text-black"
