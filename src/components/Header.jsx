@@ -38,32 +38,32 @@ const Header = () => {
           <div>
             <div class="hidden md:block">
               <Link
-                to="/services"
+                to="/teams"
                 class="inline-block py-1 md:py-4 mr-6   hover:text-green-300 text-gray-100"
               >
-                Services
+                Teams
               </Link>
               <Link
                 to="/projects"
                 class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6"
               >
-                Our Works
+                Projects
               </Link>
               <Link
                 to="/members"
-                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300"
+                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6"
               >
                 Members
+              </Link>
+              <Link
+                to="/about"
+                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300"
+              >
+                About
               </Link>
             </div>
           </div>
           <div class="hidden md:block">
-            <Link
-              to="/about"
-              class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6"
-            >
-              About
-            </Link>
             <Link
               to="/contact"
               class="inline-block py-2 px-4 text-gray-700 bg-white hover:bg-gray-100 rounded-lg"

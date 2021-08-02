@@ -5,6 +5,7 @@ import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Teams from "./components/Teams";
 import "./App.css";
 
 const App = () => {
@@ -23,9 +24,9 @@ const App = () => {
           <Route path="/projects">
             <Projects />
           </Route>
-          {/* <Route path="/members">
-            <Members />
-          </Route> */}
+          <Route path="/teams">
+            <Teams />
+          </Route>
           <Route path="/contact">
             <Contact />
           </Route>
