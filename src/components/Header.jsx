@@ -1,18 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { gsap, Power3 } from "gsap";
+import { navigationBar } from "./Animate";
 
 const Header = () => {
   let nav = useRef(null);
 
-  let navTl = gsap.timeline();
-
   useEffect(() => {
-    navTl.from(nav, {
-      y: -90,
-      stagger: 0.6,
-      opacity: 1,
-    });
+    navigationBar(nav);
   }, []);
 
   return (

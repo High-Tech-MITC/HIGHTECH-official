@@ -4,7 +4,7 @@ import About from "./sub/About";
 import Provides from "./sub/Provides";
 import Info from "./sub/Info";
 import Subscribe from "./sub/Subscribe";
-import { gsap, Power3 } from "gsap";
+import { welcomeHero } from "./Animate";
 
 const Landing = () => {
   let welcomeText = useRef(null);
@@ -14,43 +14,15 @@ const Landing = () => {
   let terminal = useRef(null);
   let terminalCursor = useRef(null);
 
-  let textTl = gsap.timeline();
-
-  let terminalTl = gsap.timeline();
-
   useEffect(() => {
-    textTl
-      .from(welcomeText, {
-        y: -90,
-        stagger: 0.6,
-        opacity: 0,
-      })
-      .from(hightTech, {
-        y: -50,
-        opacity: 0,
-      })
-      .from(description, {
-        y: -10,
-        stagger: 0.6,
-        opacity: 0,
-      })
-      .from(ourservice, {
-        y: -20,
-        stagger: 0.6,
-        opacity: 0,
-      });
-
-    terminalTl
-      .from(terminal, {
-        x: 90,
-        opacity: 0,
-      })
-      .to(terminalCursor, {
-        opacity: 0,
-        ease: Power3.inOut,
-        duration: 0.6,
-        repeat: -1,
-      });
+    welcomeHero(
+      welcomeText,
+      hightTech,
+      description,
+      ourservice,
+      terminal,
+      terminalCursor
+    );
   }, []);
 
   return (
