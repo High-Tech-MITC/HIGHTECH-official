@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { navigationBar } from "./Animate";
 
 const Header = () => {
@@ -8,6 +8,11 @@ const Header = () => {
   useEffect(() => {
     navigationBar(nav);
   }, []);
+
+  let pathname = useLocation().pathname;
+
+  // console.log(pathname);
+
 
   return (
     <nav>
@@ -33,25 +38,25 @@ const Header = () => {
             <div class="hidden md:block">
               <Link
                 to="/teams"
-                class="inline-block py-1 md:py-4 mr-6   hover:text-green-300 text-gray-100"
+                class={`inline-block py-1 md:py-4 mr-6   hover:text-green-300 text-gray-100 ${pathname == "/teams" && "underline"}` }
               >
                 Teams
               </Link>
               <Link
                 to="/projects"
-                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6"
+                class={`inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6 ${pathname == "/projects" && "underline"} `}
               >
                 Projects
               </Link>
               <Link
                 to="/members"
-                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6"
+                class={`inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6 ${pathname == "/members" && "underline"} `}
               >
                 Members
               </Link>
               <Link
                 to="/about"
-                class="inline-block py-1 md:py-4 text-gray-100 hover:text-green-300"
+                class={`inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6 ${pathname == "/about" && "underline"} `}
               >
                 About
               </Link>
@@ -60,7 +65,7 @@ const Header = () => {
           <div class="hidden md:block">
             <Link
               to="/contact"
-              class="inline-block py-2 px-4 text-gray-700 bg-white hover:bg-gray-100 rounded-lg"
+              class={`inline-block py-1 md:py-4 text-gray-100 hover:text-green-300 mr-6 ${pathname == "/contact" && "underline"} `}
             >
               Contact Us
             </Link>
